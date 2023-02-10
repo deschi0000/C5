@@ -7,6 +7,7 @@ def create_tamagotchi():
     '''
     This will create a tamagotchi object
     '''
+
     name = ""
     while len(name) == 0:
 

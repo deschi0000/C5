@@ -3,28 +3,24 @@ from classes import *
 from functions import *
 
 import os      # Clear the cmd line
-
-
-
+import time    # Show messages this way?
 
 
 #/==========================================================
-# Constants
-# MAX_AGE = 100
-MAX_AGE = 2
-skips = 0
 
-# is_resting = False      #  Not working??
+MAX_AGE = 10
+skips = 0
+is_resting = False
 
 #/==========================================================
 # INTRO / CREATION
+
 print("Welcome to Tamagotchi")
 print("Hey Guy, Let's create your new Friend!")
 
 t1 = create_tamagotchi()
 print("Congratulations on your new pet!")
 print(t1)
-
 
 press_enter()
 
@@ -33,15 +29,16 @@ press_enter()
 
 
 
-
-
 while t1.age < MAX_AGE:
 
     # TODO prompt for commands...
     # TODO after commands, lower food, raise poop, start neglect counter
-    # TODO 
+
     print(f"DAY {t1.age}")
     for i in range(0,3):    # Morning, Day and Night
+
+        # if i > 0:
+        #     os.system("cls")
 
         #/==========================================================
         # COMMANDLIST
@@ -49,31 +46,41 @@ while t1.age < MAX_AGE:
         print(t1)
         print("COMMANDS")
 
-        
-        # print("Feed [f]  |  Put To Sleep [s]")
+        #TODO error handling for incorrect input
+
         if t1.is_resting is False:
             command = input("Feed [f]  |  Rest [r]  |  Do Nothing [n]\n")
         elif t1.is_resting is True:
             command = input("Feed [f]  |  Wake Up [w]  |  Do Nothing [n]\n")
 
-        # print(command.lower())
-        
 
-        # TODO the resting bit
-        if command == "r":
-            t1.is_resting == True
+        #TODO Perhaps move all these checks into their own functions?
+
+        if is_resting == True:
+            t1.rest()                   # Continue Resting
+
+        if is_resting == True and t1.energy == 100:     # if energy is 100 and resting, it has to wake up
+            is_resting = False                          # energy and not resting, might just of ate a snack?
+            t1.wake_up()                                
+
+
+
+        if command == "r":              # Rest
+            
+            is_resting = True
             t1.rest() 
             
-        if command == "w":
-            t1.is_resting == False
-            print(f"{t1.name} woke up. It's energy is: {t1.energy}")
+        if command == "w":              # Wake up
+            
+            is_resting = False
+            t1.wake_up()
 
 
         if command == "n":
             t1.neglect()
         
-        # os.system("cls")
-
+        
+        os.system("cls")
 
 
 
