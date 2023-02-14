@@ -12,13 +12,16 @@ MAX_AGE = 10
 skips = 0
 is_resting = False
 
+command_keys = ["f", "r", "w", "p", "n"]
+
 #/==========================================================
 # INTRO / CREATION
 
-print("Welcome to Tamagotchi")
-print("Hey Guy, Let's create your new Friend!")
-
-t1 = create_tamagotchi()
+# print("Welcome to Tamagotchi")
+# intro_logo()
+# print("Hey Guy, Let's create your new Friend!")
+# t1 = create_tamagotchi()
+t1 = Tamagotchi("DK")
 print("Congratulations on your new pet!")
 print(t1)
 
@@ -37,8 +40,6 @@ while t1.age < MAX_AGE:
     print(f"DAY {t1.age}")
     for i in range(0,3):    # Morning, Day and Night
 
-        # if i > 0:
-        #     os.system("cls")
 
         #/==========================================================
         # COMMANDLIST
@@ -46,42 +47,51 @@ while t1.age < MAX_AGE:
         print(t1)
         print("COMMANDS")
 
-        #TODO error handling for incorrect input
-
-        if t1.is_resting is False:
-            command = input("Feed [f]  |  Rest [r]  |  Do Nothing [n]\n")
-        elif t1.is_resting is True:
-            command = input("Feed [f]  |  Wake Up [w]  |  Do Nothing [n]\n")
 
 
-        #TODO Perhaps move all these checks into their own functions?
+       
+        
+        command = command_menu(t1)
+        os.system("cls")                # Do we like clearing the menu? less confusing?
 
-        if is_resting == True:
-            t1.rest()                   # Continue Resting
-
-        if is_resting == True and t1.energy == 100:     # if energy is 100 and resting, it has to wake up
-            is_resting = False                          # energy and not resting, might just of ate a snack?
-            t1.wake_up()                                
+        if command == "f":
+            t1.feed()
+            food_message(t1)
 
 
-
-        if command == "r":              # Rest
+        if command == "r":                           # Rest
+            if t1.energy == 100:
+                print(f"{t1.name} is fully rested!")
+            else:
+                is_resting = True
+                rest_check(t1, is_resting, t1.energy) 
             
-            is_resting = True
-            t1.rest() 
-            
-        if command == "w":              # Wake up
+        if command == "w":                           # Wake up
             
             is_resting = False
             t1.wake_up()
 
+        if command == "p":                          # Play
+            t1.play()
+            print(f"{t1.name} is having fun playing!")
 
-        if command == "n":
-            t1.neglect()
-        
-        
-        os.system("cls")
 
+
+        if command == "n" or command == "":         # Do Nothing
+            rest_check(t1, is_resting, t1.energy)
+            if is_resting is False:
+                t1.neglect()
+        
+
+
+        #/==========================================================
+        # CHECKS!
+        energy_check(t1.energy, t1)
+        hunger_check(t1.hunger, t1)
+
+
+        # os.system("cls")
+        press_enter()
 
 
     #  END OF DAY -> get full rest + Increment Age
@@ -89,7 +99,8 @@ while t1.age < MAX_AGE:
     t1.age += 1
     print(t1)
 
-    os.system("cls")
+    # os.system("cls")
+    press_enter()
 
 
 
@@ -104,3 +115,15 @@ print(f"{t1} has died of old age")
     
 
 
+
+
+
+'''
+Check rest
+
+
+
+
+
+
+'''
