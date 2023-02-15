@@ -7,25 +7,22 @@ class Tamagotchi:
         self.name = name
         self.age = 1
         self.asleep = False
-        self.hunger = 55
-        # self.energy = 75
-        self.energy = 40
+        self.hunger = 10
+        self.energy = 80                    # Start level: 75
         self.health = 100
         self.happiness = 90
         self.is_resting = False
         self.prompt_wakeup = False
         self.is_sick = False
+        self.is_alive = True
 
-        '''
-        * Capable of being fed
-        * Capable of being put to bed
-        * Capable of going to sleep on its own, 
-             losing health from hunger 
-             and pooping on its own without prompting
-        * Capable of aging from birth through to death
-        * Capable of getting sick   ---> overfeeding / not cleaning / neglect
-                    
-        '''
+        # Do checks for just pooed, and check against the counter
+        self.just_pooed = False
+        self.unclean = 0
+        self.stomach =  30
+        self.holding = 0
+
+
 
     def put_to_bed(self):
 
@@ -34,29 +31,30 @@ class Tamagotchi:
         else:
             self.energy = 100
 
+
     def __str__(self):
         return f"\nName:{self.name}\nAge: {self.age}\nEnergy: {self.energy}\nHunger: {self.hunger}\nHealth: {self.health}\nHappiness: {self.happiness}\n"
 
+
     def intro(self):
         return f"\n{self.name}. It is {self.age} years old.\n"
+
 
     def happiness_check(self):
         # TODO
         return 0
 
+
     def neglect(self):
         self.happiness -= 5
 
+
     def lose_health(self):
-        if self.health > 0:
+        if self.health -5 > 0:
             self.health -= 5
         else:
             self.health = 0
 
-    def play(self):
-        self.energy -= 5
-        print(
-            f"Wow that was a great rest! {self.name}'s energy: {self.energy}")
 
     def rest(self):
 
@@ -80,8 +78,7 @@ class Tamagotchi:
         if self.health + 7 < 100:
             self.health += 7
         else:
-            self.health = 100
-        
+            self.health = 100        
 
         print(f"{self.name} is resting.")
 
@@ -105,10 +102,10 @@ class Tamagotchi:
             self.happiness = 100
 
 
+
     def wake_up(self):
         self.is_resting = False
         print(f"{self.name} Woke up! Energy: {self.energy}")
-
 
 
 
@@ -128,6 +125,39 @@ class Tamagotchi:
         else:
             self.health = 100
 
+        if self.stomach < 100:
+            self.stomach += 15
+        else:
+            self.stomach = 100
 
 
 
+    def poo(self):
+        
+        if self.just_pooed == True and self.unclean > 3:
+            self.is_sick == True
+            print(f"{self.name} got sick!")
+
+        self.holding = 0
+
+        if self.hunger <100:
+            self.hunger +=10
+        else:
+            self.hunger = 100
+
+        if self.energy - 5 > 0:       
+            self.energy -= 5
+        else:
+            self.energy = 0    
+
+        if self.happiness + 2 < 100:
+            self.happiness += 2
+        else:
+            self.happiness = 100
+
+        # self.just_pooed = True
+        self.unclean += 1
+        print(f"{self.name} needs to be cleaned!")
+
+    def clean(self):
+        self.unclean = 0
