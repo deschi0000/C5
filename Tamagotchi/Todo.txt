@@ -31,7 +31,7 @@ BUG ---> sick_check()not printing that t1 is sick after clean function
 BUG ---> still getting sick after cleaning and playing? maybe not enough to eat??
 
 BUG at_rest really messing everything up.
-
+BUG -> day two menu popping up twice
 
 #/==========================================================
 
@@ -39,21 +39,29 @@ BUG at_rest really messing everything up.
 Next time:
 
 TODO:
-- NEGLECT COUNTER--> FOR SICKNESS     neglected more than 7 times? --> in a row?
 - FEED COUNTER--> FOR SICKNESS!       if hunger is at 0, fed 3 more times.
-- POOP COUNTER --> FOR HEALTH AND SICKNESS
-- CLEAN FUNCTION --> CLEAN THE POOP
 
 
 
 -RANDOM SLEEPING --> REST ON ITS OWN (IF HEALTH BELOW? OR TRULY RANDOM?)
 
-- Constrain user input for each command menu
 - Frames and animation
 
 
 
 
+#/==========================================================
+18.2.2023 Session1
+
+> Constrain user input for each command menu
+
+
+
+#/==========================================================
+17.2.2023
+> POOP COUNTER --> FOR HEALTH AND SICKNESS
+> CLEAN FUNCTION --> CLEAN THE POOP
+> NEGLECT COUNTER--> FOR SICKNESS     neglected more than 7 times? --> in a row?
 
 
 
@@ -84,7 +92,7 @@ TODO:
 
 
 
-
+WTF is this?
   .^._.^.
   | . . |
  (  ---  )
