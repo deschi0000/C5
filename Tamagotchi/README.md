@@ -12,6 +12,10 @@ Thanks for checking it out folks!
 
 https://www.youtube.com/watch?v=rdDAtwBDwcg
 
+## How to use
+
+Just grab the whole thing and run the tamagotchi_app.py file.
+
 
 ## FAQ
 
@@ -27,8 +31,8 @@ I am aware of that- I never played with one and my research was limited to my sp
 
 
 
-## 🛠 Skills
-Python, Javascript, HTML, CSS, C#
+## Languages
+Python
 
 
 ## Acknowledgements
