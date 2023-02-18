@@ -1,5 +1,7 @@
-
 import time
+from random import choice
+
+PLAY = ["playing volleyball", "playing in the grass", "listening to Metallica", "worshipping Bahamut", "playing Gamecube"]
 
 
 class Tamagotchi:
@@ -11,17 +13,19 @@ class Tamagotchi:
         self.energy = 80                    # Start level: 75
         self.health = 100
         self.happiness = 90
+        self.neglectometer = 0
         self.is_resting = False
         self.prompt_wakeup = False
-        self.is_sick = False
         self.is_alive = True
+        self.is_playing = False
 
         # Do checks for just pooed, and check against the counter
-        self.just_pooed = False
-        self.unclean = 0
-        self.stomach =  30
-        self.holding = 0
+        self.soiled = False
+        self.is_holding = 0
 
+        self.unclean = 0
+        self.is_sick = False
+        self.days_sick = 0
 
 
     def put_to_bed(self):
@@ -33,20 +37,17 @@ class Tamagotchi:
 
 
     def __str__(self):
-        return f"\nName:{self.name}\nAge: {self.age}\nEnergy: {self.energy}\nHunger: {self.hunger}\nHealth: {self.health}\nHappiness: {self.happiness}\n"
+        return f"\nName: {self.name}\nAge: {self.age}\nEnergy: {self.energy}\nHunger: {self.hunger}\nHealth: {self.health}\nHappiness: {self.happiness}\n"
 
 
     def intro(self):
         return f"\n{self.name}. It is {self.age} years old.\n"
 
 
-    def happiness_check(self):
-        # TODO
-        return 0
-
 
     def neglect(self):
         self.happiness -= 5
+        self.neglectometer += 1
 
 
     def lose_health(self):
@@ -101,11 +102,28 @@ class Tamagotchi:
         else:
             self.happiness = 100
 
+        if self.neglectometer - 1 > 0:
+            self.neglectometer -= 1
+        else:
+            self.neglectometer = 0
+
+        self.is_playing = True
+        print(f"{self.name} is having fun {choice(PLAY)}!")
+
 
 
     def wake_up(self):
         self.is_resting = False
         print(f"{self.name} Woke up! Energy: {self.energy}")
+
+    def cure(self):
+        print(f"You gave {self.name} medicine.")        
+        print(f"{self.name} is feeling better!")        
+        self.is_sick = False
+        if self.happiness + 2 < 100:
+            self.happiness += 2
+        else:
+            self.happiness = 100
 
 
 
@@ -125,20 +143,20 @@ class Tamagotchi:
         else:
             self.health = 100
 
-        if self.stomach < 100:
-            self.stomach += 15
+        if self.neglectometer - 1 > 0:
+            self.neglectometer -= 1
         else:
-            self.stomach = 100
+            self.neglectometer = 0
 
 
 
     def poo(self):
         
-        if self.just_pooed == True and self.unclean > 3:
-            self.is_sick == True
-            print(f"{self.name} got sick!")
+        # if self.just_pooed == True and self.unclean > 3:
+        #     self.is_sick == True
+        #     print(f"{self.name} got sick!")
 
-        self.holding = 0
+        self.is_holding = 0
 
         if self.hunger <100:
             self.hunger +=10
@@ -157,7 +175,10 @@ class Tamagotchi:
 
         # self.just_pooed = True
         self.unclean += 1
-        print(f"{self.name} needs to be cleaned!")
+        self.soiled = True
+        # print(f"{self.name} needs to be cleaned!")
 
     def clean(self):
         self.unclean = 0
+        self.soiled = False
+        print(f"{self.name} is all clean now")

@@ -1,5 +1,6 @@
 from classes import Tamagotchi
 from random import choice
+from tamagotchi_animation import *
 
 import os      # Clear the cmd line
 import time
@@ -7,8 +8,12 @@ import time
 
 FOOD = ["Croissant", "Cake", "Manju", "Pasta", "Lobster Claw", "Risotto", "Gua bao"]
 MAX_AGE = 10
-AWAKE_COMMANDS = []
-ASLEEP_COMMANDS = []
+AWAKE_COMMANDS_RESTED = ["f", "p", "u", "n"]
+AWAKE_COMMANDS = ["f","r", "p", "u", "n" ]
+AWAKE_COMMANDS_SICK = ["f","r", "p", "m", "n" ]
+AWAKE_COMMANDS_SOILED = ["f","r", "p", "c", "n" ]
+ASLEEP_COMMANDS = ["w", "r"]
+
 
 
 def create_tamagotchi():
@@ -36,6 +41,7 @@ def time_of_day_message(num):
 
 def press_enter():
     # enter_pressed = False
+    userinput = "999"
     userinput = input("Press Enter to Continue")
     if userinput == "":
         os.system("cls")
@@ -43,56 +49,84 @@ def press_enter():
 
 
 
-def rest_check(object, is_sleep, energy):
+def rest_check(object, energy):
 
-    if is_sleep == True and energy == 100:                # Fully rested, wake up
+    if object.is_resting == True and energy == 100:                # Fully rested, wake up
         return object.wake_up()
-    elif is_sleep == False and energy == 100:             # No need to sleep
+    elif object.is_resting == False and energy == 100:             # No need to sleep
         return f"\n{object.name} is fully rested!"
-    elif is_sleep == True and energy < 100:               # Keep resting
+    elif object.is_resting == True and energy < 100:               # Keep resting
+        # sleep_animation()
         return object.rest()
-    elif is_sleep == True and object.prompt_wakeup() == True:
+    elif object.is_resting == True and object.prompt_wakeup == True:
         object.prompt_wakeup = False
         return object.wake_up()
 
 #/==========================================================
 # Checks Energy / Hunger / Age
 
-def energy_check(energy, object):
+def energy_check(object):
     # include object? Maybe if the energy is zero, invoke kill function.
-    if energy < 15:
+    if object.energy < 15:
         warning("extreme_energy", object)
-    elif energy < 30:
+    elif object.energy < 30:
         warning("energy", object)
 
 
-def hunger_check(hunger, object):
-    if hunger > 75:
+def hunger_check(object):
+    if object.hunger > 75:
         object.lose_health()
         warning("extreme_hunger", object)
-    elif hunger > 45:
+    elif object.hunger > 45:
         object.lose_health()
         warning("hunger", object)
 
 
-def age_check(age, object):
-    if age == MAX_AGE:
+def age_check(object):
+    if object.age == MAX_AGE:
         object.is_alive = False
-        print(f"\n{object.name} has died of old age")
-        print("              ")
-        print("              ")
-        print("              ")
-        print("              ")
 
 
-def stomach_check(stomach, object):
-    if object.just_pooed == True:
+def happiness_check(object):
+    if object.neglectometer > 8:
+        object.is_sick = True
+    elif object.neglectometer > 5 and object.is_playing == False:        #not is playing prevents from showing if the user just played with it
+        print(f"{object.name} is feeling a little neglected...")
+
+
+def reset(object):
+    # Function that will reset stats that change naturally after one turn
+    object.playing = False
+
+
+
+def death_type_check(object):
+    if object.age < MAX_AGE:
+        print(f"{object.name} didn't make it...")
+    else:
+        print(f"{object.name} died peacefully of old age")
+
+
+def final_stats(object):
+    death_animation()
+    print(f"GG! These are {object.name}'s final stats")
+    print("==================================")
+    print(object)
+    print("==================================")
+
+    #play death animation
+
+
+
+
+def stomach_check(object):
+    if object.soiled == True:
         object.is_holding == 0
-    elif object.just_pooed == False and object.holding > 5:
+    elif object.soiled == False and object.is_holding > 5:
         print(f"{object.name} Pooed!")
         object.poo()
     else:
-        object.holding += 1
+        object.is_holding += 1
 
 
 
@@ -100,7 +134,7 @@ def stomach_check(stomach, object):
 
 
 
-def warning(type, object):
+def warning(type, object): 
     if type == "energy":
         print(f"{object.name}'s is getting tired!")
     if type == "extreme_energy":
@@ -111,27 +145,126 @@ def warning(type, object):
         print(f"!Careful! {object.name} is getting really hungry!")
 
 
-def command_menu(object):
-    if object.is_resting is False and object.energy == 100:
-        return input("Feed [f]  |  Do Nothing [n]\n")
-    elif object.is_resting is False and object.just_pooed == True:
-        return input("Feed [f]  |  Rest [r]  | Play [p] | Poo(u) | Do Nothing [n]\n")
-    elif object.is_resting is False:
-        return input("Feed [f]  |  Rest [r]  | Play [p] | Poo(u) | Clean [c] | Do Nothing [n]\n")
 
+
+def command_menu(object):
+
+    c = "999"
+    # print("\nEnter your command:")
+    if object.is_resting is False and object.energy == 100:                         # Awake, fully rested, healthy
+        while c.lower() not in AWAKE_COMMANDS_RESTED:
+            c = input("Feed [f]  | Play [p] | Poo(u) | Do Nothing [n]\n")        
+    elif object.is_resting is False and object.soiled == True:                      # Awake, soiled
+        while c.lower() not in AWAKE_COMMANDS_SOILED:
+            c = input("Feed [f]  |  Rest [r]  | Play [p] | Clean [c] | Do Nothing [n]\n")
+    elif object.is_resting is False and object.is_sick == True:                     # Awake, sick
+        while c.lower() not in AWAKE_COMMANDS_SICK:
+            c = input("Feed [f]  |  Rest [r]  | Play [p] | Give Medicine [m] | Do Nothing [n]\n")    
+    elif object.is_resting is False:                                                # Awake, healthy
+        while c.lower() not in AWAKE_COMMANDS:
+            c = input("Feed [f]  |  Rest [r]  | Play [p] | Poo(u) | Do Nothing [n]\n")
     elif object.is_resting is True:
-        return input("Feed [f]  |  Wake Up [w]  |  Do Nothing [n]\n")
+        while c.lower() not in ASLEEP_COMMANDS:                                     # Asleep
+            c = input("Wake Up [w]  |  Keep Resting [r]\n")
+    return c.lower()
+
+
+def command_execute(input, object):
+
+    if input == "f":
+        object.feed()
+        food_message(object)
+
+    if input == "r":                           # Rest
+        if object.energy == 100:
+            print(f"{object.name} is fully rested!")
+        else:
+            object.is_resting = True
+            rest_check(object, object.energy) 
+        
+    if input == "w":                           # Wake up            
+        # at_rest = False
+        object.wake_up()
+
+    if input == "p":                           # Play
+        object.play()
+
+    if input == "u":                           #Poo
+        object.poo()
+        # object.soiled = True
+        print(f"{object.name} feels relieved!")
+
+    if input == "c":
+        object.clean()
+
+    if input == "m":
+        object.cure()
+
+    if input == "n":              # Do Nothing
+        rest_check(object, object.energy)
+        if object.is_resting is False:
+            object.neglect()
+
+
+
 
 def food_message(object):
     print(f"{object.name} enjoyed eating {choice(FOOD)}")
 
-
-def final_stats(max_age, is_alive, object):
-    if max_age == 2:
-        print(f"{object.name} has died of old age")
-    if is_alive == False:
-        print(f"{object.name} has died of neglect")
         
+def clean_check(object):
+    if object.soiled == True and object.unclean > 3:
+        object.is_sick == True
+        # print(f"{object.name} is sick!")
+    elif object.soiled == True:
+        object.unclean += 1    
+        print(f"{object.name} needs to be cleaned!")
+
+
+def sick_check(object):                             # Checks for display message
+    if object.is_sick == True:
+        print(f"{object.name} is sick!")
+
+        if object.energy - 5 > 0:       
+            object.energy -= 5
+        else:
+            object.energy = 0
+
+        if object.happiness - 3 > 0:       
+            object.happiness -= 3
+        else:
+            object.happiness = 0
+
+
+
+
+
+def days_sick_check(object):                        # Check after each day
+    if object.days_sick > 3:            
+        object.is_alive = False
+    elif object.is_sick == True:                    # if over 3: dead, 
+        object.days_sick += 1                       #   else add a day
+
+
+        
+
+def end_of_day(object):
+    print("==================================")
+    print(f"END OF DAY {object.age}")
+    print("==================================")
+
+    # print(f"This is {object.name}'s Stats for today")
+    # print("==================================")
+    # print(object)
+    # print("==================================")
+    object.age += 1
+    time.sleep(3)
+    os.system("cls")
+
+
+
+
+
 
 
 
