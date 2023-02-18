@@ -1,115 +1,43 @@
-import time
+import os      
+import time    
 from classes import *
-from functions import *
-
-import os      # Clear the cmd line
-import time    # Show messages this way?
-from random import choice
+from tamagotchi_functions import *
 
 
-#/==========================================================
+# t1 = Tamagotchi("DK")           #Debugging Instance
+t1 = intro()
 
-# MAX_AGE = 10
-skips = 0
-# is_resting = False
-just_pooed = False
-# command_keys = ["f", "r", "w", "p", "n"]
-# PLAY = ["Playing volleyball", "Playing in the grass", "Listening to Metallica", "Worshipping Bahamut"]
-
-#/==========================================================
-# INTRO / CREATION
-
-# print("Welcome to Tamagotchi")
-# intro_logo()
-# print("Hey Guy, Let's create your new Friend!")
-# t1 = create_tamagotchi()
-t1 = Tamagotchi("DK")
-print("Congratulations on your new pet!")
-print(t1)
-
-press_enter()
-
-
-#/==========================================================
-
-
-
-# while t1.age < MAX_AGE:
 while t1.is_alive:
 
-    # TODO prompt for commands...
-    # TODO after commands, lower food, raise poop, start neglect counter
-
-    # print(f"DAY {t1.age}")
     for i in range(0,3):    # Morning, Day and Night
 
-
-        #/==========================================================
-        # COMMANDLIST
+        print("==================================")
         print(f"DAY {t1.age}")
         print(time_of_day_message(i))
         print("==================================")
 
         print(t1)
-        print("COMMANDS")
-
-
+        # print("COMMANDS:")
+        print("What would you like to do?")
         reset(t1)
-       
-        
-        
+                       
         command = command_menu(t1)
         os.system("cls")                # Do we like clearing the menu? less confusing?
 
         command_execute(command, t1)
-        # if command == "f":
-        #     t1.feed()
-        #     food_message(t1)
-
-        # if command == "r":                           # Rest
-        #     if t1.energy == 100:
-        #         print(f"{t1.name} is fully rested!")
-        #     else:
-        #         is_resting = True
-        #         rest_check(t1, is_resting, t1.energy) 
-            
-        # if command == "w":                           # Wake up            
-        #     is_resting = False
-        #     t1.wake_up()
-
-        # if command == "p":                           # Play
-        #     t1.play()
-
-        # if command == "u":                           #Poo
-        #     t1.poo()
-        #     t1.just_pooed = True
-        #     print(f"{t1.name} feels relieved!")
-
-        # if command == "c":
-        #     t1.clean()
-
-        # if command == "m":
-        #     t1.cure()
-
-        # if command == "n" or command == "":         # Do Nothing
-        #     rest_check(t1, is_resting, t1.energy)
-        #     if is_resting is False:
-        #         t1.neglect()
-        
-
 
         #/==========================================================
         # CHECKS!
         energy_check(t1)
         hunger_check(t1)
         age_check(t1)
-        stomach_check(t1)
-        clean_check(t1)
+        holding_check(t1)
         sick_check(t1)
+        clean_check(t1)
         happiness_check(t1)
-
-        # os.system("cls")
-        press_enter()
+        depleter(t1)
+        sleep_roll(t1)
+        treasure_hunt_roll(t1)
 
     days_sick_check(t1)
 
@@ -118,13 +46,5 @@ while t1.is_alive:
 
     #press_enter()       #--> Using sleep command instead of enter...
 
-
-
-    # print("COMMANDS = feed[f]")
-    # time.sleep(5)s
-    # t1.put_to_bed()
-
-# print(f"{t1} has died of old age")
 death_type_check(t1)
 final_stats(t1)
-
