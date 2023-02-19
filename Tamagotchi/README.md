@@ -14,9 +14,7 @@ On a sunny day, the pet *should* be able to:
 - [x] Age from birth to death
 - [x] Get sick from neglect
 
-With each tweak, even in the final stages, came the inevitable bugs. If you find one, or have suggestions, let me know!
-
-I want to get better.
+With each tweak, even in the final stages, came the inevitable bugs. If you find one, or have suggestions, let me know! I want to get better!
 
 I had a blast doing this project as it's one of the biggest I've undertaken so far.
 
@@ -36,15 +34,7 @@ Just grab the whole thing and run the tamagotchi_app.py file.
 
 #### Is it turn-based?
 
-Why yes it is. Each day is divided into a morning, noon and night with one day essentially being a year of a tamagotchi's life. Depending on what the limit is set to, the decisions taken will your pet may make it happily all the way to the end and die peacefully of old age, or, likewise, early from neglect and miscare. The game does try to hint so it doesn't happen, but geez, just feed the thing.
-
-
-#### But it isn't anything like an actual tamagotchi...
-
-I am aware of that- I never played with one and my research was limited to my spare time. From what I did know about the game, I worked to fulfill the coding challenge's requirements and make it somewhat playable. It will need much much much more testing for the stats to make sense, though a simple playthrough will be enjoyable, with some fun little motifs and even an easter egg or two thrown in (pun intended)
-
-
-
+Each day is divided into a morning, noon and night with one day essentially being a year of a tamagotchi's life. Depending on what the limit is set to, the decisions taken will your pet may make it happily all the way to the end and die peacefully of old age, or, likewise, early from neglect and miscare. The game does try to hint so it doesn't happen, but geez, just feed the thing.
 
 ## Languages
 Python
