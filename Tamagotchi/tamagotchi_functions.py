@@ -27,16 +27,15 @@ def create_tamagotchi():
     '''
     This will create a tamagotchi object
     '''
-
     name = ""
+    print("What would you like to name it? ", end="") 
     while len(name) == 0:
-        print("Congratulations on your new pet!")        
-        name = input("What would you like to name it? ")
+        name = input("")
         if len(name.strip()) == 0:
-            print("Please enter some values")       
-            name = ""
-      
-        return Tamagotchi(name)
+            print("Please enter a valid name: ", end="")          
+    print("Congratulations on your new pet!")  
+
+    return Tamagotchi(name)
     
 def time_of_day_message(num):
     if num == 0:
