@@ -8,7 +8,7 @@ It is a turn-based version of the Japanese game which allows a player to care fo
 On a sunny day, the pet *should* be able to:
 
 - [x] Be fed
-- [x] Put to bed
+- [x] Be put to bed
 - [x] Lose health from hunger
 - [x] Poop without prompting
 - [x] Age from birth to death
