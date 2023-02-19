@@ -5,6 +5,21 @@ This is a simple command line tamagotchi program written using python for the Ce
 
 It is a turn-based version of the Japanese game which allows a player to care for their virtual pet through prompts and feedback, with some fun little animations thrown in as well. 
 
+On a sunny day, the pet *should* be able to:
+
+- [x] Be fed
+- [x] Put to bed
+- [x] Lose health from hunger
+- [x] Poop without prompting
+- [x] Age from birth to death
+- [x] Get sick from neglect
+
+With each tweak, even in the final stages, came the inevitable bugs. If you find one, or have suggestions, let me know!
+
+I want to get better.
+
+I had a blast doing this project as it's one of the biggest I've undertaken so far.
+
 Thanks for checking it out folks!
 
 
