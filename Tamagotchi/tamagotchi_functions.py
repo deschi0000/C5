@@ -28,12 +28,12 @@ def create_tamagotchi():
     This will create a tamagotchi object
     '''
     name = ""
+    print("Congratulations on your new pet!")  
     print("What would you like to name it? ", end="") 
     while len(name) == 0:
         name = input("")
         if len(name.strip()) == 0:
             print("Please enter a valid name: ", end="")          
-    print("Congratulations on your new pet!")  
 
     return Tamagotchi(name)
     
@@ -46,17 +46,20 @@ def time_of_day_message(num):
         return "Eveningtime"
 
 def press_enter():
-    # enter_pressed = False
     userinput = "999"
     userinput = input("Press Enter to Continue")
     if userinput == "":
         os.system("cls")
-        # enter_pressed = True
 
+def quit():
+    userinput = "999"
+    print("Press [q] to quit")
+    while userinput.lower() != "q":
+        userinput = input("")
+    os.system("cls")
 
 
 def rest_check(object, energy):
-
     if object.is_resting == True and energy == 100:                # Fully rested, wake up
         return object.wake_up()
     elif object.is_resting == False and energy == 100:             # No need to sleep
@@ -98,11 +101,10 @@ def age_check(object):
         object.is_alive = False
 
 
-def happiness_check(object):
-    
+def happiness_check(object):    
     if object.happiness < 20 and object.neglectometer > 7:
         sad_animation()
-        print(f"{object.name} is feeling a sad...")
+        print(f"{object.name} is feeling sad...")
         press_enter()
     if object.happiness > 65 and object.soiled is False and object.is_resting is False and object.is_sick is False:
         object.number_of_times_happy += 1
@@ -125,8 +127,6 @@ def reset(object):
     # Function that will reset stats that change naturally after one turn
     object.playing = False
 
-
-
 def death_type_check(object):
     death_animation()
     if object.age < MAX_AGE:
@@ -148,13 +148,8 @@ def final_stats(object):
     if object.number_of_times_sick > 2:
         print("Remember to clean your pet so it doesn't get sick as often!")
     print("Thank you for playing!")
-    print("==================================")
-
-    print("")
-    press_enter()
-    #play death animation
-
-
+    print("==================================\n")
+    quit()
 
 
 def holding_check(object):
@@ -166,11 +161,6 @@ def holding_check(object):
         # press_enter()
     else:
         object.is_holding += 1
-
-
-
-#/==========================================================
-
 
 
 def warning(type, object): 
@@ -185,9 +175,7 @@ def warning(type, object):
 
 
 
-
 def command_menu(object):
-
     c = "999"
     # print("\nEnter your command:")
     if object.is_resting is False and object.energy == 100:                         # Awake, fully rested, healthy
@@ -210,7 +198,6 @@ def command_menu(object):
 
 
 def command_execute(input, object):
-
     if input == "f":
         object.feed()    
 
@@ -253,7 +240,7 @@ def clean_check(object):
             unclean_animation() 
         print(f"{object.name} needs to be cleaned!")
         press_enter()
-        # print(f"{object.name} is sick!")
+
     elif object.soiled == True:
         object.unclean += 1
         object.happiness -= 5
@@ -302,9 +289,7 @@ def days_sick_check(object):                        # Check after each day
     elif object.is_sick is True:                    # if over 3: dead, 
         object.days_sick += 1                       #   else add a day
 
-
-        
-
+       
 def end_of_day(object):
     print("==================================")
     print(f"END OF DAY {object.age}")
@@ -314,8 +299,7 @@ def end_of_day(object):
     else:
         object.energy = 100
     object.age += 1
-    press_enter()
-    
+    press_enter()   
 
 
 def intro():
@@ -323,8 +307,7 @@ def intro():
     birth_animation()
     naming_animation()
     tamagotchi1 = create_tamagotchi()
-    # t1 = Tamagotchi("DK")
-    # print("==================================")
+    # tamagotchi1 = Tamagotchi("DK")
 
     os.system("cls")
     naming_animation()

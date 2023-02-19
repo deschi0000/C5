@@ -3,9 +3,6 @@ import os
 from frame_functions import *
 
 def death_animation():
-    # print("It died")
-    # time.sleep(2)
-
     for i in range(0, 2):
         os.system("cls")
         ghost_1()
@@ -13,10 +10,8 @@ def death_animation():
         os.system("cls")
         ghost_2()
         time.sleep(0.9)
-    os.system("cls")
-    ghost_1()
-    time.sleep(3)
-    os.system("cls")
+        os.system("cls")
+        ghost_1()
 
 def eat_animation():
     for i in range(0, 2):
@@ -26,8 +21,6 @@ def eat_animation():
         os.system("cls")
         eat_2()
         time.sleep(0.6)
-    # os.system("cls")
-
 
 def sleep_animation():
     for i in range(0, 2):
@@ -39,7 +32,6 @@ def sleep_animation():
         time.sleep(0.8)
         os.system("cls")
         sleep_1()
-    # os.system("cls")
 
 def unchi_animation():
     for i in range(0, 2):
@@ -49,15 +41,11 @@ def unchi_animation():
         os.system("cls")
         unchi_2()
         time.sleep(0.9)
-    # os.system("cls")
-    
-
 
 def happy_animation2():
     os.system("cls")
     happy_1()
     time.sleep(3)
-    # os.system("cls")
 
 def happy_animation():
     for i in range(0, 2):
@@ -72,13 +60,11 @@ def wake_up_animation():
     os.system("cls")
     wake_up1()
     time.sleep(1)
-    # os.system("cls")
 
 def unclean_animation2():
     os.system("cls")
     unclean_3()
     time.sleep(3)
-    # os.system("cls")
 
 def unclean_animation():
     for i in range(0, 2):
@@ -95,8 +81,6 @@ def sick_animation2():
     os.system("cls")
     sick_1()
     time.sleep(3)
-    # os.system("cls")
-    
 
 def sick_animation():
     for i in range(0, 2):
@@ -119,8 +103,6 @@ def cured_animation():
         time.sleep(0.5)
         os.system("cls")
         cure_1()
-    # os.system("cls")
-
 
 def play_animation():
     for i in range(0, 2):
@@ -132,7 +114,6 @@ def play_animation():
         time.sleep(0.7)
         os.system("cls")
         play_1()
-    # os.system("cls")
 
 def clean_animation():
     for i in range(0, 2):
@@ -144,13 +125,10 @@ def clean_animation():
         time.sleep(0.7)
         os.system("cls")
         clean_1()
-    # os.system("cls")
 
 def sad_animation():
     os.system("cls")
     sad_1()
-    # time.sleep(2)
-    # os.system("cls")
 
 def birth_animation():
         os.system("cls")
