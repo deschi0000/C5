@@ -27,7 +27,7 @@ https://www.youtube.com/watch?v=rdDAtwBDwcg
 
 ## How to use
 
-Just grab the whole thing and run the tamagotchi_app.py file.
+The tamagotchi_app.exe file in the dist folder should do the trick. If not, feel free to grab the files and try it on your own!
 
 
 ## FAQ
