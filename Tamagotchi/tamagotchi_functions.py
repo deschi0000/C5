@@ -2,7 +2,7 @@ from classes import Tamagotchi
 from random import choice, randrange
 from tamagotchi_animation import *
 
-import os      # Clear the cmd line
+import os
 import time
 
 MAX_AGE = 10
@@ -21,12 +21,7 @@ OBJECTS_TO_FIND = [
     ]
 
 
-
-
 def create_tamagotchi():
-    '''
-    This will create a tamagotchi object
-    '''
     name = ""
     print("Congratulations on your new pet!")  
     print("What would you like to name it? ", end="") 
@@ -34,9 +29,9 @@ def create_tamagotchi():
         name = input("")
         if len(name.strip()) == 0:
             print("Please enter a valid name: ", end="")          
-
     return Tamagotchi(name)
     
+
 def time_of_day_message(num):
     if num == 0:
         return "Good Morning!"
@@ -45,11 +40,13 @@ def time_of_day_message(num):
     else:
         return "Eveningtime"
 
+
 def press_enter():
     userinput = "999"
     userinput = input("Press Enter to Continue")
     if userinput == "":
         os.system("cls")
+
 
 def quit():
     userinput = "999"
@@ -71,20 +68,30 @@ def rest_check(object, energy):
         object.prompt_wakeup = False
         return object.wake_up()
 
-#/==========================================================
-# Checks Energy / Hunger / Age
 
 def energy_check(object):
-    # include object? Maybe if the energy is zero, invoke kill function.
     if object.energy < 15:
         warning("extreme_energy", object)
     elif object.energy < 30:
         warning("energy", object)
 
 def depleter(object):
-    object.energy -= 7
-    object.happiness -= 2
-    object.health -= 3
+    if object.energy - 7 > 0:
+        object.energy -= 7
+    else:
+        object.energy = 0
+    if object.happiness - 2 > 0:
+        object.happiness -=2
+    else: 
+        object.happiness = 0
+    if object.health - 3 > 0:
+        object.health -=3
+    else:
+        object.health = 0
+    if object.hunger + 4 < 100:
+        object.hunger += 4
+    else:
+        object.hunger = 100
 
 
 def hunger_check(object):
@@ -111,7 +118,6 @@ def happiness_check(object):
         happy_animation()
         print(f"{object.name} is feeling happy!")
         press_enter()
-
     if object.neglectometer > 15:
         object.is_sick = True
         sick_animation()
@@ -122,10 +128,15 @@ def happiness_check(object):
         press_enter()
     
 
+def death_check(object):
+    if object.energy < 0 or object.health < 0:
+        object.is_alive = False 
+
 
 def reset(object):
     # Function that will reset stats that change naturally after one turn
     object.playing = False
+
 
 def death_type_check(object):
     death_animation()
@@ -138,8 +149,6 @@ def death_type_check(object):
 def final_stats(object):
     print(f"GG. Some info on {object.name}'s final stats")
     print("==================================")
-    # print(object)
-    # print("==================================")
     print(f"{object.name} lived to {object.age} years old")
     if object.age < MAX_AGE:
         print("Make sure to take better care of your pet next time!")
@@ -157,8 +166,6 @@ def holding_check(object):
         object.is_holding == 0
     elif object.soiled == False and object.is_holding > 5 and object.is_resting is False:
         object.unchi(True)
-        # print(f"{object.name} relieved itself!")
-        # press_enter()
     else:
         object.is_holding += 1
 
@@ -174,13 +181,10 @@ def warning(type, object):
         print(f"!Careful! {object.name} is getting really hungry!")
 
 
-
 def command_menu(object):
     c = "999"
-    # print("\nEnter your command:")
     if object.is_resting is False and object.energy == 100:                         # Awake, fully rested, healthy
         while c.lower() not in AWAKE_COMMANDS_RESTED:
-            # os.system("cls")                       # Put these in each if you don't want repeats (but it gets rid of the stats!)
             c = input("Feed [f]  | Play [p] | Poo(u) | Do Nothing [n]\n")        
     elif object.is_resting is False and object.is_sick is True:                     # Awake, sick
         while c.lower() not in AWAKE_COMMANDS_SICK:
@@ -194,28 +198,27 @@ def command_menu(object):
     elif object.is_resting is True:
         while c.lower() not in ASLEEP_COMMANDS:                                     # Asleep
             c = input("Wake Up [w]  |  Keep Resting [r]\n")
+
     return c.lower()
 
 
 def command_execute(input, object):
     if input == "f":
         object.feed()    
-
-    if input == "r":                           # Rest
+    if input == "r":                         
         if object.energy == 100:
             print(f"{object.name} is fully rested!")
             press_enter()
         else:
             object.is_resting = True
-            rest_check(object, object.energy) 
-        
-    if input == "w":                           # Wake up            
+            rest_check(object, object.energy)         
+    if input == "w":                                      
         object.wake_up()
 
-    if input == "p":                           # Play
+    if input == "p":                           
         object.play()
 
-    if input == "u":                           #Poo
+    if input == "u":                           
         object.unchi()
 
     if input == "c":
@@ -224,7 +227,7 @@ def command_execute(input, object):
     if input == "m":
         object.cure()
 
-    if input == "n":              # Do Nothing
+    if input == "n":             
         rest_check(object, object.energy)
         if object.is_resting is False:
             object.neglect()
@@ -260,7 +263,6 @@ def sick_check(object):                             # Checks for display message
             object.energy -= 5
         else:
             object.energy = 0
-
         if object.happiness - 3 > 0:       
             object.happiness -= 3
         else:
@@ -271,6 +273,7 @@ def sleep_roll(object):
     # Random sleeping
     if randrange(25) == 7 and object.is_resting is not True:
         object.rest(True)
+
 
 def treasure_hunt_roll(object):
     if randrange(100) == 42 and object.is_resting is not True:
@@ -308,12 +311,10 @@ def intro():
     naming_animation()
     tamagotchi1 = create_tamagotchi()
     # tamagotchi1 = Tamagotchi("DK")
-
     os.system("cls")
     naming_animation()
     print(f"Your pet's new name is {tamagotchi1.name}")
     press_enter()
-
     return tamagotchi1
 
 
