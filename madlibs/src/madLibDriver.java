@@ -41,7 +41,8 @@ public class madLibDriver {
             else if (template[i] == "PLACE"){
                 response = getPlace();
                 finalMadLib[i] = response;
-            } else {
+            }
+            else {
                 finalMadLib[i] = template[i];
             }
         }
@@ -54,7 +55,7 @@ public class madLibDriver {
         Random random = new Random();
 
         String[][] templates = {
-                {"","EXCL", "he said", "ADV", "as he jumped into his convertible", "NOUN", "and drove off with his", "ADJ", "wife."}
+                {"EXCL", "he said", "ADV", "as he jumped into his convertible", "NOUN", "and drove off with his", "ADJ", "wife."}
         };
 
         int randomIndex = random.nextInt(templates.length);
