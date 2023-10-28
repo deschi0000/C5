@@ -6,9 +6,15 @@ public class Main {
     public static void main(String[] args) {
         // NB rows and columns must be equal amounts
         int[][] myArray = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int arrayLength = myArray.length;
+
+        // debugging
+        // testCase();
+        System.out.printf("=======================================%n");
 
         System.out.printf("Hello and welcome!");
         System.out.printf("\nHow many times would you like to rotate? 90 / 180 / 270?: ");
+
 
         // ask user for how many rotations
         Scanner scanner = new Scanner(System.in);
@@ -21,12 +27,21 @@ public class Main {
         System.out.print("\nOriginal Array: \n");
         printMatrix(myArray);
 
+        // initialize the array
+        int[][] newMatrix = new int[arrayLength][arrayLength];
+
+
         // wrapped in number of times you want to rotate
         for (int i = 0; i < rotations; i++) {
-            int[][] newMatrix = rotateArray(myArray);
+            if (i == 0){
+                newMatrix = rotateArray(myArray);
+            }
+            else {
+                newMatrix = rotateArray(newMatrix);
+            }
         }
         System.out.print("\nRotated Array: \n");
-        printMatrix(myArray);
+        printMatrix(newMatrix);
     }
 
     // method for rotating by 9 degrees
