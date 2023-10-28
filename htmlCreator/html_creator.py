@@ -36,7 +36,6 @@ def create_html():
         css.write(
             """
             body {
-                background-color: darkgrey;
                 text-align: center;
             }
 
@@ -44,10 +43,6 @@ def create_html():
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 100px;
                 font-weight: 600;
-                background-image: linear-gradient(to right, #3b6340, #0f00e7);
-                color: transparent;
-                background-clip: text;
-                -webkit-background-clip: text;
             }
         """
         )
