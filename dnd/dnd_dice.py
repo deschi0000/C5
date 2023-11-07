@@ -39,11 +39,22 @@ def get_dice():
 
 
     while add_another_dice is True:
-        current_dice = input ("Please enter a dnd die (i.e. 3d6): ")
-        dnd_die.append(current_dice)
-        want_to_continue = input("Would you like add another? (y/n) ")
-        if want_to_continue.lower() == "n":
-            add_another_dice = False
+        # error checking for die side amounts < 100
+        try:
+            current_dice = input ("Please enter a dnd die (i.e. 3d6): ")
+            sides = int(current_dice.split("d")[1])
+            
+            if sides > 100:
+                raise Exception
+            
+            dnd_die.append(current_dice)
+            want_to_continue = input("Would you like add another? (y/n) ")
+
+            if want_to_continue.lower() == "n":
+                add_another_dice = False
+        except:
+            print("Die sides may not exceed 100")
+            
         
     return dnd_die
 
