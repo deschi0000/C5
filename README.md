@@ -46,6 +46,24 @@ print_output(convolve(matrix_1))
 
 
 ## htmlCreator
+Devise a program that will automatically write all of the HTML for you
 
+Input: On standard console input you should be prompted to enter a paragraph.
+Output: Once your paragraph has been entered, it should be saved as a valid HTML file and opened in your default browser to display the results.
+
+```bash
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title></title>
+        </head>
+
+        <body>
+            <p>This is my paragraph entry</p>
+        </body>
+    </html>
+```
+Bonus: A stylesheet is also generated
 
 ## MadLibs
