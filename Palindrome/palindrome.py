@@ -67,6 +67,7 @@ if __name__ == '__main__':
     # print(f"the next palindrome higher than {user_input} is {palindrome(user_input)}")
     test_cases = [0, 808, 999, 2133, 4128, 629, 3**39]
     for i in test_cases:
-        print(f"the next palindrome higher than {i} is {palindrome(i)}")
+        # print(f"the next palindrome higher than {i} is {palindrome(i)}")
+        print(f"{i} => {palindrome(i)}")
 
     # palindrome()
