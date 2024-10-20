@@ -28,7 +28,17 @@ print_output(convolve(matrix_1))
 
 
 ## Palindrome
-
+Given a positive whole number, find the smallest palindrome greater than the given number.
+```bash
+$ python palindrome.py
+0 => 11
+808 => 818
+999 => 1001
+2133 => 2222
+4128 => 4224
+629 => 636
+4052555153018976267 => 4052555153515552504
+```
 
 ## RomanNumerals
 
