@@ -26,10 +26,13 @@ def dnd_dice_generator():
     dnd_die_arr = get_dice()
 
     # calculate the sum of the die
-    total_sum_rolled = get_sum(dnd_die_arr)
+    # total_sum_rolled = get_sum(dnd_die_arr)
+    
+    # calculate and display the sums of the die
+    get_sum(dnd_die_arr)
 
-    # display roll result:
-    print(f"The result of your rolls: {total_sum_rolled}")
+    # # display roll result:
+    # print(f"The result of your rolls: {total_sum_rolled}")
 
 
 def get_dice():
@@ -60,11 +63,10 @@ def get_dice():
 
 
 def get_sum(dnd_die):
-    total_sum = 0
 
     # iterate through the array and calculate the roll of each die
     for i, e in enumerate(dnd_die):
-
+        total_sum = 0
         # temp amount to hold each die roll value
         die_roll_amount = 0
 
@@ -74,7 +76,7 @@ def get_sum(dnd_die):
         number_of_sides = int(index_arr[1])
 
         # iterate through the array
-        for i in range(0, number_of_die):
+        for j in range(0, number_of_die):
             die_roll_amount = random.randint(0, number_of_sides)
             total_sum += die_roll_amount
 
@@ -83,6 +85,9 @@ def get_sum(dnd_die):
             # print(f"number: {number_of_die}")
             # print(f"sides: {number_of_sides}")
             # print(f"die roll amount: {die_roll_amount}\n")
+
+        print(f"{dnd_die[i]} = {total_sum}")
+
 
     return total_sum
 
