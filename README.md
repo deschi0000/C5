@@ -86,6 +86,22 @@ console.log(romanToNum("CDXLIX"));
 
 ```
 
+## RomanNumerals (C#)
+The same program specifications, but written as a console program using C#.
+
+```bash
+Would you like to Convert [N]umeral to Digit or [D]igit to numeral or [Q]uit? n
+Please enter your roman numerals: cdlvii
+The number cdlvii in Roman Numerals is: 457
+
+Would you like to Convert [N]umeral to Digit or [D]igit to numeral or [Q]uit? d
+Please enter your number: 1977
+The number 1977 in Roman Numerals is: MCMLXXVII
+
+Would you like to Convert [N]umeral to Digit or [D]igit to numeral or [Q]uit?
+
+```
+
 
 ## RotatingArrays
 Given a NxN size 2D array of numbers. Develop a way to rotate the data as if you rotated the data by 90 degrees clockwise.
