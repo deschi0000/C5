@@ -126,7 +126,7 @@ namespace RomanNumeral
             for (int i = 0; i < romanArr.Length; i++)
             {
                 int s = 1;
-                Console.WriteLine($"i:{romanArr[i]}");
+                //Console.WriteLine($"i:{romanArr[i]}");
                 if (i == romanArr.Length - 1)
                 {
                     s = 0;
@@ -217,7 +217,7 @@ namespace RomanNumeral
                             userNumber = Console.ReadLine();
                         }
                         string numeral = DigitToNumeral(userNumber);
-                        Console.Write($"The number {userNumber} in Roman Numerals is: {numeral}\n");
+                        Console.Write($"The number {userNumber} in Roman Numerals is: {numeral}\n\n");
                         break;
 
                     case "n":
@@ -226,7 +226,7 @@ namespace RomanNumeral
                         char[] checkArr = userNumerals.ToLower().ToCharArray();
 
                         string newDigit = Convert.ToString(NumeralToDigit(userNumerals));
-                        Console.Write($"The number {userNumerals} in Roman Numerals is: {newDigit}\n");
+                        Console.Write($"The number {userNumerals} in Roman Numerals is: {newDigit}\n\n");
                         break;
                     case "q":
                         break;

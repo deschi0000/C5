@@ -13,3 +13,10 @@ C:\Users\Dave\Documents\Coding\C5\RomanNumeralCS\RomanNumeral\obj\Debug\RomanNum
 C:\Users\Dave\Documents\Coding\C5\RomanNumeralCS\RomanNumeral\obj\Debug\RomanNumeral.csproj.CoreCompileInputs.cache
 C:\Users\Dave\Documents\Coding\C5\RomanNumeralCS\RomanNumeral\obj\Debug\RomanNumeral.exe
 C:\Users\Dave\Documents\Coding\C5\RomanNumeralCS\RomanNumeral\obj\Debug\RomanNumeral.pdb
+C:\Users\Dave\Documents\Coding\C5\C5\RomanNumeralCS\RomanNumeral\bin\Debug\RomanNumeral.exe.config
+C:\Users\Dave\Documents\Coding\C5\C5\RomanNumeralCS\RomanNumeral\bin\Debug\RomanNumeral.exe
+C:\Users\Dave\Documents\Coding\C5\C5\RomanNumeralCS\RomanNumeral\bin\Debug\RomanNumeral.pdb
+C:\Users\Dave\Documents\Coding\C5\C5\RomanNumeralCS\RomanNumeral\obj\Debug\RomanNumeral.csproj.AssemblyReference.cache
+C:\Users\Dave\Documents\Coding\C5\C5\RomanNumeralCS\RomanNumeral\obj\Debug\RomanNumeral.csproj.CoreCompileInputs.cache
+C:\Users\Dave\Documents\Coding\C5\C5\RomanNumeralCS\RomanNumeral\obj\Debug\RomanNumeral.exe
+C:\Users\Dave\Documents\Coding\C5\C5\RomanNumeralCS\RomanNumeral\obj\Debug\RomanNumeral.pdb
