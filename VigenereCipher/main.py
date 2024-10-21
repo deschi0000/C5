@@ -31,6 +31,8 @@ print("ENCODING: ")
 print(vignere_encode("snitch", "thepackagehasbeendelivered"))
 print(vignere_encode("train", "murderontheorientexpress"))
 print(vignere_encode("garden ", "themolessnuckintothegardenlastnight"))
+print(vignere_encode("python", "alwayslookonthebrightsideoflife"))
+print(vignere_encode("moore ", "foryoureyesonly"))
 
 def vignere_decode(codeword, coded_message):
 
