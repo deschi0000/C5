@@ -61,7 +61,7 @@ def vignere_decode(codeword, coded_message):
 
     return "".join(decoded_message)
 
-print("\nDECODING")
+print("\nDECODING:")
 print(vignere_decode("snitch", "lumicjcnoxjhkomxpkwyqogywq"))
 print(vignere_decode("train", "flrlrkfnbuxfrqrgkefckvsa"))
 print(vignere_decode("cloak", "klatrgafedvtssdwywcyty"))
