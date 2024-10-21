@@ -2,7 +2,7 @@
 
 
 
-# Codehort Coding Challenges
+# Codehort Coding Challenges (Python)
 
 A small repository of my submissions to the Coding Challenges at Centennial College's Coding club.
 
@@ -11,7 +11,7 @@ the html creater representing two extremes on the spectrum) each was a humble at
 As such, I felt that, with the exception of Tamagotchi, this readme would serve as a short, general overview for the repos. 
 
 
-## Convolve
+## Convolve (Python)
 Create a function or method called convolve() that takes a a 2d array of floating point numbers and returns a 2d array of floating point numbers. The function/method will sum every 3x3 section of the 2d array and return a new 2d array based on the summed numbers.
 ```bash
 matrix_1 = [[1, 1, 1, 1, 0], 
@@ -24,7 +24,7 @@ print_output(convolve(matrix_1))
 # oputput >>> [[6, 5, 4], [3.5, 3, 3]] 
 ```
 
-## Marhkov
+## Marhkov (Python)
 A Markov chain algorithm basically determines the next most probable suffix word for a given prefix. 
 To do this, a Markov chain program typically breaks an input text (training text) into a series of words, then by sliding along them in some fixed sized window, storing the first N words as a prefix and then the N + 1 word as a member of a set to choose from randomly for the suffix.
 now he is gone she said he is gone for good
@@ -46,7 +46,7 @@ OUTPUT: she said he she said he is gone she gone she said gone for good is gone 
 
 ```
 
-## Palindrome
+## Palindrome (Python)
 Given a positive whole number, find the smallest palindrome greater than the given number.
 ```bash
 $ python palindrome.py
@@ -59,7 +59,7 @@ $ python palindrome.py
 4052555153018976267 => 4052555153515552504
 ```
 
-## RomanNumerals (JAVASCRIPT)
+## RomanNumerals (JS)
 A program that can convert Roman Numerals to Decimal numbers and Decimal numbers to Roman Numerals.
 ```bash
 Symbol     I    V    X     L      C      D       M
@@ -122,7 +122,7 @@ Would you like to Convert [N]umeral to Digit or [D]igit to numeral or [Q]uit?
 ```
 
 
-## RotatingArrays
+## RotatingArrays (Java)
 Given a NxN size 2D array of numbers. Develop a way to rotate the data as if you rotated the data by 90 degrees clockwise.
 
 ```bash
@@ -139,7 +139,7 @@ Rotated Array:
 9 6 3
 ```
 
-## Tamagotchi
+## Tamagotchi (Python)
 
 A virtual pet whose life you must sustain through various activities including eating, playing, making it sleep, and cleaning its poop. 
 Tamagotchi's go through several life cycles, most notably, egg/infant, teen, adult, elderly. Tamagotchi's can die from lack of attention (in the classic ones, half a day of neglect would kill it) and also from age.
@@ -153,7 +153,7 @@ Requirements:
 ```
 Check out the repo for the in-depth readme: https://github.com/deschi0000/Codehort/tree/main/Tamagotchi 
 
-## VigenereCipher
+## VigenereCipher (Python)
 
 The cipher involves alphabet substitution using a shared keyword. Both people exchanging messages must agree on the secret keyword.  
 To be effective, this keyword should not be written down anywhere, but memorized.
@@ -193,7 +193,7 @@ Would you like add another? (y/n) n
 ```
 
 
-## htmlCreator
+## htmlCreator (Python)
 Devise a program that will automatically write all of the HTML for you
 
 Input: On standard console input you should be prompted to enter a paragraph.
@@ -214,7 +214,7 @@ Output: Once your paragraph has been entered, it should be saved as a valid HTML
 ```
 Bonus: A stylesheet is also generated
 
-## MadLibs
+## MadLibs (Java)
 
 Mad Libs contain short stories with many key words replaced with blanks. Beneath each blank is specified a category, such as "noun", "verb", "place", "celebrity", "exclamation" or "part of the body". One player asks the other players, in turn, to contribute a word of the specified type for each blank, but without revealing the context for that word. Finally, the completed story is read aloud. The result is usually a sentence which is comical, surreal and/or takes on somewhat of a nonsensical tone.
 
@@ -229,7 +229,7 @@ Heck! he said lazily as he jumped into his convertible banana and drove off with
 
 ```
 
-## Time converter
+## Time Converter (Python)
 A simple converter that can convert between seconds, minutes, hours and days
 ```bash
 Converting from [d]ays, [h]ours, [m]inutes or [s]econds: m
