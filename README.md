@@ -51,6 +51,27 @@ $ python palindrome.py
 
 ## VigenereCipher
 
+The cipher involves alphabet substitution using a shared keyword. Both people exchanging messages must agree on the secret keyword.  
+To be effective, this keyword should not be written down anywhere, but memorized.
+
+```bash
+print(vignere_encode("snitch", "thepackagehasbeendelivered"))
+print(vignere_encode("train", "murderontheorientexpress"))
+print(vignere_encode("garden ", "themolessnuckintothegardenlastnight"))
+```
+```bash
+ENCODING:
+lumicjcnoxjhkomxpkwyqogywq
+flrlrkfnbuxfrqrgkefckvsa
+zhvpsyrysexgxvttfwlrtgruhrynytelkug
+
+DECODING:
+thepackagehasbeendelivered
+murderontheorientexpress
+iamtheprettiestunicorn
+alwayslookonthebrightsideoflife
+foryoureyesonly
+```
 
 ## DnD
 Dice Roller! One major part of making character sheets is rolling the character's stats. 
