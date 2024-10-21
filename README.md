@@ -40,7 +40,51 @@ $ python palindrome.py
 4052555153018976267 => 4052555153515552504
 ```
 
-## RomanNumerals
+## RomanNumerals (JAVASCRIPT)
+A program that can convert Roman Numerals to Decimal numbers and Decimal numbers to Roman Numerals.
+```bash
+Symbol     I    V    X     L      C      D       M
+Value      1    5    10    50    100    500    1000
+```
+
+```bash
+console.log(romanToNum("IV"));
+console.log(romanToNum("MMMXVIII"));
+console.log(romanToNum("CDXLIX"));
+
+┌─────────┬────────┐
+│ (index) │ Values │
+├─────────┼────────┤
+│    0    │  'I'   │
+│    1    │  'V'   │
+└─────────┴────────┘
+4
+┌─────────┬────────┐
+│ (index) │ Values │
+├─────────┼────────┤
+│    0    │  'M'   │
+│    1    │  'M'   │
+│    2    │  'M'   │
+│    3    │  'X'   │
+│    4    │  'V'   │
+│    5    │  'I'   │
+│    6    │  'I'   │
+│    7    │  'I'   │
+└─────────┴────────┘
+3018
+┌─────────┬────────┐
+│ (index) │ Values │
+├─────────┼────────┤
+│    0    │  'C'   │
+│    1    │  'D'   │
+│    2    │  'X'   │
+│    3    │  'L'   │
+│    4    │  'I'   │
+│    5    │  'X'   │
+└─────────┴────────┘
+449
+
+```
 
 
 ## RotatingArrays
