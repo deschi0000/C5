@@ -1,0 +1,15 @@
+C:\Users\Dave\Desktop\Winter 2023\C5\C5\RomanNumeral\RomanNumeral\bin\Debug\RomanNumeral.exe.config
+C:\Users\Dave\Desktop\Winter 2023\C5\C5\RomanNumeral\RomanNumeral\bin\Debug\RomanNumeral.exe
+C:\Users\Dave\Desktop\Winter 2023\C5\C5\RomanNumeral\RomanNumeral\bin\Debug\RomanNumeral.pdb
+C:\Users\Dave\Desktop\Winter 2023\C5\C5\RomanNumeral\RomanNumeral\obj\Debug\RomanNumeral.csproj.AssemblyReference.cache
+C:\Users\Dave\Desktop\Winter 2023\C5\C5\RomanNumeral\RomanNumeral\obj\Debug\RomanNumeral.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dave\Desktop\Winter 2023\C5\C5\RomanNumeral\RomanNumeral\obj\Debug\RomanNumeral.csproj.CoreCompileInputs.cache
+C:\Users\Dave\Desktop\Winter 2023\C5\C5\RomanNumeral\RomanNumeral\obj\Debug\RomanNumeral.exe
+C:\Users\Dave\Desktop\Winter 2023\C5\C5\RomanNumeral\RomanNumeral\obj\Debug\RomanNumeral.pdb
+C:\Users\Dave\Documents\Coding\C5\RomanNumeralCS\RomanNumeral\bin\Debug\RomanNumeral.exe.config
+C:\Users\Dave\Documents\Coding\C5\RomanNumeralCS\RomanNumeral\bin\Debug\RomanNumeral.exe
+C:\Users\Dave\Documents\Coding\C5\RomanNumeralCS\RomanNumeral\bin\Debug\RomanNumeral.pdb
+C:\Users\Dave\Documents\Coding\C5\RomanNumeralCS\RomanNumeral\obj\Debug\RomanNumeral.csproj.AssemblyReference.cache
+C:\Users\Dave\Documents\Coding\C5\RomanNumeralCS\RomanNumeral\obj\Debug\RomanNumeral.csproj.CoreCompileInputs.cache
+C:\Users\Dave\Documents\Coding\C5\RomanNumeralCS\RomanNumeral\obj\Debug\RomanNumeral.exe
+C:\Users\Dave\Documents\Coding\C5\RomanNumeralCS\RomanNumeral\obj\Debug\RomanNumeral.pdb
