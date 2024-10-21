@@ -69,30 +69,18 @@ The cipher involves alphabet substitution using a shared keyword. Both people ex
 To be effective, this keyword should not be written down anywhere, but memorized.
 
 ```bash
-print(vignere_encode("snitch", "thepackagehasbeendelivered"))
-print(vignere_encode("train", "murderontheorientexpress"))
-print(vignere_encode("garden ", "themolessnuckintothegardenlastnight"))
 print(vignere_encode("python", "alwayslookonthebrightsideoflife"))
 print(vignere_encode("moore ", "foryoureyesonly"))
 
 ENCODING:
-lumicjcnoxjhkomxpkwyqogywq
-flrlrkfnbuxfrqrgkefckvsa
-zhvpsyrysexgxvttfwlrtgruhrynytelkug
 pjphmfamhrcaifxifvvfmzwqtmyswst
 rcfpshdsmvwbzzm
 ```
 ```bash
-print(vignere_decode("snitch", "lumicjcnoxjhkomxpkwyqogywq"))
-print(vignere_decode("train", "flrlrkfnbuxfrqrgkefckvsa"))
-print(vignere_decode("cloak", "klatrgafedvtssdwywcyty"))
 print(vignere_decode("python", "pjphmfamhrcaifxifvvfmzwqtmyswst"))
 print(vignere_decode("moore", "rcfpsgfspiecbcc"))
 
 DECODING:
-thepackagehasbeendelivered
-murderontheorientexpress
-iamtheprettiestunicorn
 alwayslookonthebrightsideoflife
 foryoureyesonly
 ```
