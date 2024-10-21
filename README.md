@@ -228,3 +228,18 @@ Your funny MadLib:
 Heck! he said lazily as he jumped into his convertible banana and drove off with his lovely wife.
 
 ```
+
+## Time converter
+A simple converter that can convert between seconds, minutes, hours and days
+```bash
+Converting from [d]ays, [h]ours, [m]inutes or [s]econds: m
+Enter a positive rational / whole number for time: 90
+Converting [d]ays, [h]ours, [m]inutes or [s]econds: h
+90.0 minutes = 1.5 hours
+
+Converting from [d]ays, [h]ours, [m]inutes or [s]econds: m
+Enter a positive rational / whole number for time: 0.5
+Converting [d]ays, [h]ours, [m]inutes or [s]econds: s
+0.5 minutes = 30.0 seconds
+```
+
