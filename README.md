@@ -40,7 +40,51 @@ $ python palindrome.py
 4052555153018976267 => 4052555153515552504
 ```
 
-## RomanNumerals
+## RomanNumerals (JAVASCRIPT)
+A program that can convert Roman Numerals to Decimal numbers and Decimal numbers to Roman Numerals.
+```bash
+Symbol     I    V    X     L      C      D       M
+Value      1    5    10    50    100    500    1000
+```
+
+```bash
+console.log(romanToNum("IV"));
+console.log(romanToNum("MMMXVIII"));
+console.log(romanToNum("CDXLIX"));
+
+┌─────────┬────────┐
+│ (index) │ Values │
+├─────────┼────────┤
+│    0    │  'I'   │
+│    1    │  'V'   │
+└─────────┴────────┘
+4
+┌─────────┬────────┐
+│ (index) │ Values │
+├─────────┼────────┤
+│    0    │  'M'   │
+│    1    │  'M'   │
+│    2    │  'M'   │
+│    3    │  'X'   │
+│    4    │  'V'   │
+│    5    │  'I'   │
+│    6    │  'I'   │
+│    7    │  'I'   │
+└─────────┴────────┘
+3018
+┌─────────┬────────┐
+│ (index) │ Values │
+├─────────┼────────┤
+│    0    │  'C'   │
+│    1    │  'D'   │
+│    2    │  'X'   │
+│    3    │  'L'   │
+│    4    │  'I'   │
+│    5    │  'X'   │
+└─────────┴────────┘
+449
+
+```
 
 
 ## RotatingArrays
@@ -62,6 +106,17 @@ Rotated Array:
 
 ## Tamagotchi
 
+A virtual pet whose life you must sustain through various activities including eating, playing, making it sleep, and cleaning its poop. 
+Tamagotchi's go through several life cycles, most notably, egg/infant, teen, adult, elderly. Tamagotchi's can die from lack of attention (in the classic ones, half a day of neglect would kill it) and also from age.
+
+Requirements:
+```bash
+* Capable of being fed
+* Capable of being put to bed
+* Capable of going to sleep on its own, losing health from hunger and pooping on its own without prompting
+* Capable of aging from birth through to death
+```
+Check out the repo for the in-depth readme: https://github.com/deschi0000/Codehort/tree/main/Tamagotchi 
 
 ## VigenereCipher
 
