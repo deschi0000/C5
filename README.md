@@ -44,7 +44,21 @@ $ python palindrome.py
 
 
 ## RotatingArrays
+Given a NxN size 2D array of numbers. Develop a way to rotate the data as if you rotated the data by 90 degrees clockwise.
 
+```bash
+How many times would you like to rotate? 90 / 180 / 270?: 90
+
+Original Array:
+1 2 3
+4 5 6
+7 8 9
+
+Rotated Array:
+7 4 1
+8 5 2
+9 6 3
+```
 
 ## Tamagotchi
 
@@ -53,7 +67,7 @@ $ python palindrome.py
 
 The cipher involves alphabet substitution using a shared keyword. Both people exchanging messages must agree on the secret keyword.  
 To be effective, this keyword should not be written down anywhere, but memorized.
-Encoding:
+
 ```bash
 print(vignere_encode("snitch", "thepackagehasbeendelivered"))
 print(vignere_encode("train", "murderontheorientexpress"))
