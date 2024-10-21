@@ -1,7 +1,3 @@
-
-
-
-
 # Codehort Coding Challenges
 
 A small repository of my submissions to the Coding Challenges at Centennial College's Coding club.
@@ -175,7 +171,7 @@ alwayslookonthebrightsideoflife
 foryoureyesonly
 ```
 
-## DnD
+## DnD (Python)
 Dice Roller! One major part of making character sheets is rolling the character's stats. 
 The first number, the number of dice to roll, can be any integer between 1 and 100, inclusive.
 The second number, the number of sides of the dice, can be any integer between 2 and 100, inclusive.
@@ -243,3 +239,14 @@ Converting [d]ays, [h]ours, [m]inutes or [s]econds: s
 0.5 minutes = 30.0 seconds
 ```
 
+## Making Change (Python)
+A simple change machine, denoting the number of bills that are to be returned based on the amount charged.
+```bash
+python .\making_change.py   
+Total Amount: $187.00
+Number of Bills: 7
+Bills Breakdown: {500: 0, 100: 1, 25: 3, 10: 1, 5: 0, 1: 2}
+Total Amount: $2,461.00
+Number of Bills: 12
+Bills Breakdown: {500: 4, 100: 4, 25: 2, 10: 1, 5: 0, 1: 1}
+```
