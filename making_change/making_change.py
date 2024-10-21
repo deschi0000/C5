@@ -8,7 +8,7 @@ def main():
 
 def change(total_amount):
     ''''''
-    print(f"Total Amount: {total_amount}")
+    print(f"Total Amount: {total_amount:,.2}")
 
     total_bills = 0
     bill_dict = {
