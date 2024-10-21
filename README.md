@@ -62,6 +62,17 @@ Rotated Array:
 
 ## Tamagotchi
 
+A virtual pet whose life you must sustain through various activities including eating, playing, making it sleep, and cleaning its poop. 
+Tamagotchi's go through several life cycles, most notably, egg/infant, teen, adult, elderly. Tamagotchi's can die from lack of attention (in the classic ones, half a day of neglect would kill it) and also from age.
+
+Requirements:
+```bash
+* Capable of being fed
+* Capable of being put to bed
+* Capable of going to sleep on its own, losing health from hunger and pooping on its own without prompting
+* Capable of aging from birth through to death
+```
+Check out the repo for the in-depth readme: https://github.com/deschi0000/Codehort/tree/main/Tamagotchi 
 
 ## VigenereCipher
 
