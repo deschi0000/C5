@@ -2,7 +2,7 @@
 
 
 
-# Codehort Coding Challenges (Python)
+# Codehort Coding Challenges
 
 A small repository of my submissions to the Coding Challenges at Centennial College's Coding club.
 
