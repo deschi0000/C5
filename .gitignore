@@ -1,4 +1,8 @@
 __pycache__/
+.vs/
+
+
+
 palindrom_test.py
 palindrom_test2.py
 convolve_tester.py
