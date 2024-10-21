@@ -134,7 +134,7 @@ Please enter a(n) EXCLAMATION(!): Heck!
 Please enter a(n) ADVERB: lazily
 Please enter a(n) NOUN: banana
 Please enter a(n) ADJECTIVE: lovely
-Your funny MadLib!
+Your funny MadLib:
 Heck! he said lazily as he jumped into his convertible banana and drove off with his lovely wife.
 
 ```
