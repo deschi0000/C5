@@ -20,7 +20,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int rotations = scanner.nextInt();
         rotations = rotations / 90;
-        System.out.print("your choice: " + rotations);
+        // System.out.print("your choice: " + rotations);
 
 
         // print the original matrix, rotate, print new matrix
