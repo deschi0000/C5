@@ -6,6 +6,7 @@ public class madLibDriver {
         System.out.println("Welcome to Madlibs");
         String[] templateArray = getTemplate();
         String[] finalMadLib = buildMadLib(templateArray);
+        System.out.println("Your funny MadLib:");
         System.out.println(String.join(" ", finalMadLib));
     }
 
