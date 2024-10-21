@@ -25,7 +25,26 @@ print_output(convolve(matrix_1))
 ```
 
 ## Marhkov
+A Markov chain algorithm basically determines the next most probable suffix word for a given prefix. 
+To do this, a Markov chain program typically breaks an input text (training text) into a series of words, then by sliding along them in some fixed sized window, storing the first N words as a prefix and then the N + 1 word as a member of a set to choose from randomly for the suffix.
+now he is gone she said he is gone for good
 
+```bash
+INPUT: now he is gone she said he is gone for good
+
+PREFIX              SUFFIX
+================================
+now he              is
+he is               gone, gone
+is gone             she, for
+gone she            said
+she said            he
+said he             is
+gone for            good
+
+OUTPUT: she said he she said he is gone she gone she said gone for good is gone she gone for good said he is he is gone he is gone
+
+```
 
 ## Palindrome
 Given a positive whole number, find the smallest palindrome greater than the given number.
