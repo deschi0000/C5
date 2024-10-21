@@ -125,3 +125,16 @@ Output: Once your paragraph has been entered, it should be saved as a valid HTML
 Bonus: A stylesheet is also generated
 
 ## MadLibs
+
+Mad Libs contain short stories with many key words replaced with blanks. Beneath each blank is specified a category, such as "noun", "verb", "place", "celebrity", "exclamation" or "part of the body". One player asks the other players, in turn, to contribute a word of the specified type for each blank, but without revealing the context for that word. Finally, the completed story is read aloud. The result is usually a sentence which is comical, surreal and/or takes on somewhat of a nonsensical tone.
+
+```bash
+Welcome to MadLibs
+Please enter a(n) EXCLAMATION(!): Heck!
+Please enter a(n) ADVERB: lazily
+Please enter a(n) NOUN: banana
+Please enter a(n) ADJECTIVE: lovely
+Your funny MadLib!
+Heck! he said lazily as he jumped into his convertible banana and drove off with his lovely wife.
+
+```
